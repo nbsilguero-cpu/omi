@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MECIP Paraguay - Panel de Control</title>
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/tabler-icons.min.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <i class="ti ti-shield-check"></i>
+        <span>MECIP <small>Paraguay</small></span>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="#" class="nav__item nav__item--active"><i class="ti ti-layout-dashboard"></i> Panel general</a>
+        <a href="#" class="nav__item"><i class="ti ti-building-bank"></i> Componentes MECIP</a>
+        <a href="#" class="nav__item"><i class="ti ti-checklist"></i> Planes de mejora</a>
+        <a href="#" class="nav__item"><i class="ti ti-file-analytics"></i> Autoevaluaciones</a>
+        <a href="#" class="nav__item"><i class="ti ti-alert-triangle"></i> Riesgos</a>
+        <a href="#" class="nav__item"><i class="ti ti-users"></i> Instituciones</a>
+        <a href="#" class="nav__item"><i class="ti ti-settings"></i> Configuración</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div>
+          <h1>Panel de control - Control Interno</h1>
+          <p class="topbar__subtitle">Modelo Estándar de Control Interno para Instituciones Públicas - Paraguay</p>
+        </div>
+        <div class="topbar__user">
+          <i class="ti ti-bell"></i>
+          <div class="avatar">JR</div>
+        </div>
+      </header>
+
+      <section class="kpis">
+        <div class="kpi-card">
+          <div class="kpi-card__icon c-blue"><i class="ti ti-gauge"></i></div>
+          <div>
+            <p class="kpi-card__label">Índice global MECIP</p>
+            <p class="kpi-card__value">78.4%</p>
+            <p class="kpi-card__delta kpi-card__delta--up"><i class="ti ti-arrow-up-right"></i> 3.2% vs trimestre anterior</p>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card__icon c-teal"><i class="ti ti-checklist"></i></div>
+          <div>
+            <p class="kpi-card__label">Acciones de mejora cumplidas</p>
+            <p class="kpi-card__value">142 / 180</p>
+            <p class="kpi-card__delta kpi-card__delta--up"><i class="ti ti-arrow-up-right"></i> 78.9% de avance</p>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card__icon c-amber"><i class="ti ti-alert-triangle"></i></div>
+          <div>
+            <p class="kpi-card__label">Riesgos altos activos</p>
+            <p class="kpi-card__value">9</p>
+            <p class="kpi-card__delta kpi-card__delta--down"><i class="ti ti-arrow-down-right"></i> 2 menos que el mes pasado</p>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card__icon c-purple"><i class="ti ti-building-bank"></i></div>
+          <div>
+            <p class="kpi-card__label">Instituciones evaluadas</p>
+            <p class="kpi-card__value">34</p>
+            <p class="kpi-card__delta">de 38 OEE registradas</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-2">
+        <div class="card">
+          <div class="card__header">
+            <h2>Avance por componente MECIP</h2>
+            <span class="badge badge--info">Año 2026</span>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="chartComponentes"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <h2>Evolución del índice global</h2>
+            <span class="badge badge--info">Últimos 6 meses</span>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="chartEvolucion"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-3">
+        <div class="card">
+          <div class="card__header">
+            <h2>Distribución por subsistema</h2>
+          </div>
+          <div class="chart-wrap chart-wrap--sm">
+            <canvas id="chartSubsistema"></canvas>
+          </div>
+        </div>
+
+        <div class="card card--span2">
+          <div class="card__header">
+            <h2>Planes de mejora por institución</h2>
+            <span class="badge badge--warning">9 pendientes</span>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Institución</th>
+                <th>Componente</th>
+                <th>Avance</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ministerio de Hacienda</td>
+                <td>Ambiente de Control</td>
+                <td><div class="progress"><div class="progress__bar" style="width:92%"></div></div></td>
+                <td><span class="status status--success">Cumplido</span></td>
+              </tr>
+              <tr>
+                <td>MSPBS</td>
+                <td>Gestión del Riesgo</td>
+                <td><div class="progress"><div class="progress__bar" style="width:65%"></div></div></td>
+                <td><span class="status status--warning">En proceso</span></td>
+              </tr>
+              <tr>
+                <td>MEC</td>
+                <td>Información y Comunicación</td>
+                <td><div class="progress"><div class="progress__bar" style="width:40%"></div></div></td>
+                <td><span class="status status--warning">En proceso</span></td>
+              </tr>
+              <tr>
+                <td>DNCP</td>
+                <td>Actividades de Control</td>
+                <td><div class="progress"><div class="progress__bar" style="width:20%"></div></div></td>
+                <td><span class="status status--danger">Atrasado</span></td>
+              </tr>
+              <tr>
+                <td>Itaipú Binacional</td>
+                <td>Seguimiento</td>
+                <td><div class="progress"><div class="progress__bar" style="width:100%"></div></div></td>
+                <td><span class="status status--success">Cumplido</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+  <script src="src/js/main.js" type="module"></script>
+</body>
+</html>

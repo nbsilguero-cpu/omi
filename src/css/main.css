@@ -1,0 +1,6 @@
+/* Punto de entrada de estilos */
+@import url('base/reset.css');
+@import url('base/variables.css');
+@import url('layout/layout.css');
+@import url('components/components.css');
+@import url('utils/utilities.css');
