@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo - Cómo crear tus propios HTML</title>
+  <style>
+    body {
+      font-family: -apple-system, "Segoe UI", system-ui, Roboto, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+      color: #1f2937;
+    }
+    h1 { color: #0c447c; }
+    h2 { color: #0c447c; margin-top: 2rem; }
+    .paso {
+      background: #f4f5f7;
+      border-left: 4px solid #0c447c;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    code, pre {
+      background: #eef0f3;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: "Courier New", monospace;
+    }
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    .nota {
+      background: #FAEEDA;
+      border-left: 4px solid #BA7517;
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cómo crear tus propios archivos HTML</h1>
+  <p>
+    Esta página es una guía simple para que puedas crear y publicar tus propias páginas web,
+    incluso si no tienes mucha experiencia con tecnología. Sigue los pasos en orden.
+  </p>
+
+  <h2>Paso 1: Entender la estructura básica de un HTML</h2>
+  <div class="paso">
+    <p>Todo archivo HTML tiene esta estructura mínima. Cópiala y pégala como punto de partida:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Título de mi página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Mi primer título&lt;/h1&gt;
+  &lt;p&gt;Este es un párrafo de texto.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </div>
+
+  <h2>Paso 2: Crear tu archivo</h2>
+  <div class="paso">
+    <ol>
+      <li>Dentro de la carpeta <code>proyecto-web</code>, crea un archivo nuevo. Por ejemplo: <code>mi-pagina.html</code></li>
+      <li>Pega la estructura del Paso 1 dentro de ese archivo.</li>
+      <li>Cambia el texto entre <code>&lt;h1&gt;</code> y <code>&lt;/h1&gt;</code> por el título que quieras.</li>
+      <li>Agrega más párrafos con la etiqueta <code>&lt;p&gt;...&lt;/p&gt;</code></li>
+    </ol>
+  </div>
+
+  <h2>Paso 3: Etiquetas básicas más usadas</h2>
+  <div class="paso">
+    <ul>
+      <li><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> → Títulos (h1 es el más grande)</li>
+      <li><code>&lt;p&gt;</code> → Párrafo de texto</li>
+      <li><code>&lt;img src="ruta-de-la-imagen.jpg"&gt;</code> → Insertar una imagen</li>
+      <li><code>&lt;a href="https://ejemplo.com"&gt;Texto del enlace&lt;/a&gt;</code> → Enlace a otra página</li>
+      <li><code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> → Lista con viñetas</li>
+      <li><code>&lt;table&gt;</code> → Tabla</li>
+    </ul>
+  </div>
+
+  <h2>Paso 4: Ver tu página en el navegador</h2>
+  <div class="paso">
+    <p>
+      Esta VM ya tiene un servidor activo que muestra los archivos de la carpeta
+      <code>proyecto-web</code> en internet. Cualquier archivo <code>.html</code> que crees ahí
+      se podrá ver desde tu navegador.
+    </p>
+    <p>
+      Por ejemplo, este mismo archivo se puede ver en:
+      <br>
+      <code>https://nbsilguero-cpu.github.io/omi/ejemplo.html</code>
+    </p>
+  </div>
+
+  <h2>Paso 5: Publicar tus cambios (subir a internet)</h2>
+  <div class="paso">
+    <p>Cada vez que crees o modifiques un archivo, pídele a tu asistente que ejecute estos 3 comandos
+       (o ejecútalos tú en la terminal, dentro de la carpeta <code>proyecto-web</code>):</p>
+    <pre><code>git add .
+git commit -m "Agrego mi nueva página"
+git push</code></pre>
+    <p>Después de unos minutos, tu página estará disponible en internet en la dirección de GitHub Pages.</p>
+  </div>
+
+  <div class="nota">
+    <strong>Consejo:</strong> No te preocupes si algo se ve mal al principio. Guarda el archivo,
+    recarga el navegador (tecla F5) y revisa los cambios. Puedes repetir esto las veces que quieras.
+  </div>
+
+  <h2>Paso 6: Personalizar con estilos (CSS)</h2>
+  <div class="paso">
+    <p>
+      Para cambiar colores, tamaños y espacios, se usa CSS. Puedes agregar estilos directamente
+      dentro de tu archivo HTML, dentro de una etiqueta <code>&lt;style&gt;</code> en el
+      <code>&lt;head&gt;</code>, como se hizo en esta misma página.
+    </p>
+    <pre><code>&lt;style&gt;
+  h1 {
+    color: blue;
+  }
+&lt;/style&gt;</code></pre>
+  </div>
+
+  <p>
+    <a href="index.html">← Volver al panel principal</a>
+  </p>
+
+</body>
+</html>
